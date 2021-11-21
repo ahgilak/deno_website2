@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        sans: ["Estedad", "Inter var", ...defaultTheme.fontFamily.sans],
       },
       width: {
         72: "18rem",

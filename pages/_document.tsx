@@ -53,6 +53,7 @@ export default class DenoDocDocument extends Document {
             content="Deno, DenoLand, Development, JavaScript, TypeScript"
           />
           <link rel="stylesheet" href="/fonts/inter/inter.css" />
+          <link rel="stylesheet" href="/fonts/estedad/estedad.css" />
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <body>
