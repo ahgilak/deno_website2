@@ -9,88 +9,81 @@ function Footer(props: { simple?: boolean }): React.ReactElement {
       className={props.simple
         ? undefined
         : "bg-gray-50 border-t border-gray-200"}
+      dir="rtl"
     >
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/[...rest]" as="/manual">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Manual
+                راهنما
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <a
               href="https://doc.deno.land/builtin/stable"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
-              API
+              مستندات
             </a>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/[...rest]" as="/std">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Standard Library
+                کتابخانه استاندارد
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/x">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Third Party Modules
+                ماژول‌های متفرقه
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/benchmarks">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Benchmarks
+                بنچمارک‌ها
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/artwork">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Artwork
+                پوسترها
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <a
               href="https://deno.com/blog"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
-              Blog
+              وبلاگ
             </a>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <Link href="/translations">
               <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Translations
+                ترجمه‌ها
               </a>
             </Link>
           </div>
-          <div className="px-2 py-2">
+          <div className="px-5 py-2">
             <a
               href="https://status.deno.land/"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
-              System Status
-            </a>
-          </div>
-          <div className="px-2 py-2">
-            <a
-              href="https://github.com/denoland/deno/wiki#companies-interested-in-deno"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Companies interested in Deno
+              وضعیت سیستم
             </a>
           </div>
         </nav>
         <div className="mt-9 flex justify-center">
           <a
             href="https://github.com/denoland"
-            className="text-gray-400 hover:text-gray-500"
+            className="ml-6 text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">GitHub</span>
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -113,7 +106,7 @@ function Footer(props: { simple?: boolean }): React.ReactElement {
           </a>
           <a
             href="https://twitter.com/deno_land"
-            className="ml-6 text-gray-400 hover:text-gray-500"
+            className="text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Twitter</span>
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -150,11 +143,11 @@ function Footer(props: { simple?: boolean }): React.ReactElement {
               src="https://img.shields.io/github/workflow/status/denoland/deno_doc/ci/main?label=deno_doc&logo=github"
             />
           </a>
-          <a href="https://github.com/denoland/dotland">
+          <a href="https://github.com/denoland/deno_website2">
             <img
               className="m-2 opacity-75"
-              alt="denoland/dotland CI"
-              src="https://img.shields.io/github/workflow/status/denoland/dotland/ci/main?label=dotland&logo=github"
+              alt="denoland/deno_website2 CI"
+              src="https://img.shields.io/github/workflow/status/denoland/deno_website2/ci/main?label=deno_website2&logo=github"
             />
           </a>
         </div>
