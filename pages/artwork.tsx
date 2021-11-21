@@ -12,20 +12,20 @@ function ArtworkPage(): React.ReactElement {
   return (
     <>
       <Head>
-        <title>Artwork | Deno</title>
+        <title>پوستر‌ها | دینو</title>
       </Head>
       <CookieBanner />
       <Header />
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 mt-8 mb-24">
-        <div className="max-w-screen-lg mx-auto">
-          <h4 className="text-4xl font-bold tracking-tight">Artwork</h4>
+        <div className="max-w-screen-lg mx-auto" dir="rtl">
+          <h4 className="text-4xl font-bold tracking-tight">پوستر‌ها</h4>
           <p className="mt-4 text-lg">
-            Do you have a piece to display here?{" "}
+            شما هم اثری برای نمایش دارید؟{" "}
             <a
-              href="https://github.com/denoland/dotland/blob/main/artwork.json"
+              href="https://github.com/denoland/deno_website2/blob/main/artwork.json"
               className="link"
             >
-              Add it!
+              اضافه کنید!
             </a>
           </p>
         </div>
