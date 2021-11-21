@@ -25,7 +25,7 @@ function Header({
         <Link href="/">
           <a className="flex items-center">
             <img className="h-10 w-auto sm:h-12 my-2" src="/logo.svg" alt="" />
-            <div className="ml-5 flex flex-col justify-center">
+            <div className="mr-5 flex flex-col justify-center">
               {!main &&
                 (
                   <div className="font-bold text-gray-900 leading-tight text-2xl sm:text-3xl tracking-tight">
