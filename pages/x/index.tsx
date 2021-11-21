@@ -70,32 +70,35 @@ function ThirdPartyRegistryList(): React.ReactElement {
   return (
     <>
       <Head>
-        <title>Third Party Modules | Deno</title>
+        <title>ماژول‌های متفرقه | دینو</title>
       </Head>
       <CookieBanner />
       <div className="bg-gray">
-        <Header subtitle="Third Party Modules" widerContent={true} />
+        <Header subtitle="ماژول‌های متفرقه" widerContent={true} />
         <RegistryInstructions
           isOpen={overlayOpen}
           close={() => setOverlayOpen(false)}
         />
         <div>
-          <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 mt-8">
+          <div
+            className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 mt-8"
+            dir="rtl"
+          >
             <dt className="text-lg leading-6 font-medium text-gray-900">
-              What is deno.land/x?
+              deno.land/x چیست؟
             </dt>
             <dd className="mt-2">
               <p className="text-base leading-6 text-gray-500">
                 <span className="font-semibold">deno.land/x</span>{" "}
-                is a hosting service for Deno scripts. It caches releases of
-                open source modules stored on GitHub and serves them at one easy
-                to remember domain.
+                یک سرویس برای میزبانی از اسکریپت‌های دینو است که ماژول‌های موجود
+                در گیت‌هاب را ذخیره می‌کند تا به راحتی در یک آدرس در دسترس
+                باشند.
               </p>
             </dd>
 
             <div className="mt-2">
               <a href="#info" className="link">
-                Learn more
+                اطلاعات بیشتر
               </a>
             </div>
 
@@ -109,7 +112,7 @@ function ThirdPartyRegistryList(): React.ReactElement {
                 "
                 onClick={() => setOverlayOpen(true)}
               >
-                Publish a module
+                انتشار ماژول
               </button>
             </div>
 
@@ -122,17 +125,18 @@ function ThirdPartyRegistryList(): React.ReactElement {
             </div> */
             }
           </div>
-          <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 mt-8">
+          <div
+            className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 mt-8"
+            dir="rtl"
+          >
             <label htmlFor="query" className="font-medium sr-only">
-              Search
+              جستجو
             </label>
             <input
               id="query"
               className="block w-full px-4 py-2 leading-normal bg-white border border-gray-200 rounded-lg outline-none shadow hover:shadow-sm focus:shadow-sm appearance-none focus:border-gray-300 hover:border-gray-300 mt-1"
               type="text"
-              placeholder={!resp
-                ? "Search"
-                : `Search through ${resp.totalCount} modules`}
+              placeholder={!resp ? "جستجو" : `جستجو در${resp.totalCount} ماژول`}
               value={query}
               onChange={handleSearchInput}
             />
@@ -505,49 +509,49 @@ function ThirdPartyRegistryList(): React.ReactElement {
             id="info"
             className="max-w-screen-xl mx-auto pt-4 pb-8 sm:pt-8 px-4 sm:px-6 lg:pt-12 lg:px-8"
           >
-            <dl className="md:grid md:grid-cols-2 md:gap-8">
+            <dl className="md:grid md:grid-cols-2 md:gap-8" dir="rtl">
               <div>
                 <div>
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    How do I use modules on deno.land/x?
+                    چگونه از ماژول‌های موجود در deno.land/x استفاده کنم؟
                   </dt>
                   <dd className="mt-2">
                     <p className="text-base leading-6 text-gray-500 break-words">
-                      The basic format of code URLs is
+                      فرمت ساده استفاده از کد به صورت
                       <InlineCode>
                         https://deno.land/x/IDENTIFIER@VERSION/FILE_PATH
                       </InlineCode>
-                      . If you leave out the version it will be defaulted to the
-                      most recent version released for the module.
+                      است که اگر VERSION را خالی بگذارید به صورت پیش‌فرض از
+                      آخرین نسخه استفاده خواهد شد.
                     </p>
                   </dd>
                 </div>
                 <div className="mt-12">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    Can I find functionality built-in to Deno here?
+                    آیا می‌توانم توابع داخلی دینو را اینجا پیدا کنم؟
                   </dt>
                   <dd className="mt-2">
                     <p className="text-base leading-6 text-gray-500">
-                      No, the built-in runtime is documented on{" "}
+                      خیر، مستندات داخلی دینو در{" "}
                       <a className="link" href="https://doc.deno.land/">
                         deno doc
                       </a>{" "}
-                      and in the manual. See{" "}
+                      و در راهنما یافت می‌شوند. برای مشاهده ماژول‌های استاندارد
+                      به{" "}
                       <Link href="/std">
                         <a className="link">/std</a>
                       </Link>{" "}
-                      for the standard modules.
+                      بروید.
                     </p>
                   </dd>
                 </div>
                 <div className="mt-12">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    How do I add a module to deno.land/x?
+                    چگونه یک ماژول به deno.land/x اضافه کنم؟
                   </dt>
                   <dd className="mt-2">
                     <p className="text-base leading-6 text-gray-500 break-words">
-                      Press the button below and follow the presented
-                      instructions:
+                      روی کلید زیر کلیک کنید و اسلاید‌های راهنما را دنبال کنید:
                     </p>
                     <span className="block w-full rounded-md shadow-sm mt-4">
                       <button
@@ -555,7 +559,7 @@ function ThirdPartyRegistryList(): React.ReactElement {
                         className="w-full flex justify-center py-2 px-4 border border-gray-300 text-md font-medium rounded-md text-gray-700 bg-gray-100 hover:text-gray-500 hover:bg-gray-50 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition duration-150 ease-in-out"
                         onClick={() => setOverlayOpen(true)}
                       >
-                        Add a module
+                        اضافه کردن ماژول
                       </button>
                     </span>
                   </dd>
@@ -567,34 +571,34 @@ function ThirdPartyRegistryList(): React.ReactElement {
                     className="text-lg leading-6 font-medium text-gray-900"
                     id="warning"
                   >
-                    I am getting a warning when importing from deno.land/x!
+                    هنگام استفاده از ‌deno.land/x اخطار دریافت می‌کنم!
                   </dt>
                   <dd className="mt-2">
                     <p className="text-base leading-6 text-gray-500">
-                      deno.land/x warns you when you are implicitly importing
-                      the latest version of a module (when you do not explicitly
-                      specify a version). This is because it can{" "}
+                      هنگامی که از آخرین نسخه‌ی ماژول (بدون مشخص کردن شماره
+                      نسخه) استفاده می کنید، deno.land/x به شما اخطار می‌دهد.
+                      این کار می‌تواند باعث{" "}
                       <a
-                        href="https://github.com/denoland/dotland/issues/997"
+                        href="https://github.com/denoland/deno_website2/issues/997"
                         className="link"
                       >
-                        be unsafe to not tag dependencies
-                      </a>
-                      . To get rid of the warning, explicitly specify a version.
+                        بروز مشکل
+                      </a>{" "}
+                      شود. برای برطرف کردن اخطار شماره نسخه را مشخص کنید.
                     </p>
                   </dd>
                 </div>
                 <div className="mt-12">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    Can I edit or remove a module on deno.land/x?
+                    آیا می‌توانم ماژول‌هایی را که در deno.land/x انتشار داده‌ام
+                    حذف یا ویرایش کنم؟
                   </dt>
                   <dd className="mt-2">
                     <p className="text-base leading-6 text-gray-500">
-                      Module versions are persistent and immutable. It is thus
-                      not possible to edit or delete a module (or version), to
-                      prevent breaking programs that rely on this module.
-                      Modules may be removed if there is a legal reason to do
-                      (for example copyright infringement).
+                      نسخه های ماژول مداوم و تغییر ناپذیر هستند. برای جلوگیری از
+                      بروز باگ امکان ویرایش یا حذف یک ماژول (یا یک نسخه) وجود
+                      ندارد. ماژول‌ها ممکن است به‌خاطر دلایل قانونی (مانند حق
+                      نشر) حذف شوند.
                     </p>
                   </dd>
                 </div>
@@ -602,14 +606,16 @@ function ThirdPartyRegistryList(): React.ReactElement {
             </dl>
           </div>
           <div className="max-w-screen-lg mx-auto pt-4 pb-8 sm:pt-8 sm:pb-12 px-4 sm:px-6 lg:pt-12 lg:pb-16 lg:px-8">
-            <h4 className="font-semibold text-2xl" id="stats">
-              Stats
+            <h4 className="font-semibold text-2xl" id="stats" dir="rtl">
+              آمار
             </h4>
             {stats
               ? (
                 <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
-                    <h5 className="font-medium text-lg">New modules</h5>
+                    <h5 className="font-medium text-lg" dir="rtl">
+                      ماژول‌های جدید
+                    </h5>
                     <div className="bg-white sm:shadow border border-gray-200 overflow-hidden rounded-md mt-2">
                       <ModuleList
                         modules={stats.recently_added_modules.map((v) => ({
@@ -622,7 +628,9 @@ function ThirdPartyRegistryList(): React.ReactElement {
                     </div>
                   </div>
                   <div>
-                    <h5 className="font-medium text-lg">Recently updated</h5>
+                    <h5 className="font-medium text-lg" dir="rtl">
+                      به‌تازگی آپدیت شده
+                    </h5>
                     <div className="bg-white sm:shadow border border-gray-200 overflow-hidden rounded-md mt-2">
                       <ModuleList
                         modules={stats.recently_uploaded_versions.map((v) => ({
@@ -677,7 +685,7 @@ function ModuleList({
                             )
                             : (
                               <span className="italic text-gray-400">
-                                No description
+                                بدون توضیحات
                               </span>
                             )}
                         </span>
