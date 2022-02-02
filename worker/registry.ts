@@ -5,12 +5,17 @@ import { parseNameVersion } from "../util/registry_utils.ts";
 export const S3_BUCKET =
   "http://deno-registry2-prod-storagebucket-b3a31d16.s3-website-us-east-1.amazonaws.com/";
 
+/** Handle _legacy_ v1 registry requests.  v2 is handled by `./suggestions.ts`.
+ */
 export async function handleRegistryRequest(url: URL): Promise<Response> {
   const entry = parsePathname(url.pathname);
   if (!entry) {
     return new Response("This module entry is invalid: " + url.pathname, {
       status: 400,
-      headers: { "content-type": "text/plain" },
+      headers: {
+        "content-type": "text/plain",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   }
   const { module, version, path } = entry;
@@ -21,7 +26,10 @@ export async function handleRegistryRequest(url: URL): Promise<Response> {
         "This module has no latest version: " + url.pathname,
         {
           status: 404,
-          headers: { "content-type": "text/plain" },
+          headers: {
+            "content-type": "text/plain",
+            "Access-Control-Allow-Origin": "*",
+          },
         },
       );
     }
@@ -32,6 +40,7 @@ export async function handleRegistryRequest(url: URL): Promise<Response> {
           `Implicitly using latest version (${latest}) for ${url.origin}${
             module === "std" ? "" : "/x"
           }/${module}/${path}`,
+        "Access-Control-Allow-Origin": "*",
       },
       status: 302,
     });
@@ -58,6 +67,7 @@ export async function handleRegistryRequest(url: URL): Promise<Response> {
             }/${module}@${correctVersion}/${path} (at ${url.origin}${
               module === "std" ? "" : "/x"
             }/${module}@${version}/${path})`,
+          "Access-Control-Allow-Origin": "*",
         },
         status: 404,
       });
@@ -71,6 +81,7 @@ export async function handleRegistryRequest(url: URL): Promise<Response> {
           }/${module}@${correctVersion}/${path} (at ${url.origin}${
             module === "std" ? "" : "/x"
           }/${module}@${version}/${path})`,
+        "Access-Control-Allow-Origin": "*",
       },
       status: 302,
     });

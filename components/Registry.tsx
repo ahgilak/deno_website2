@@ -28,7 +28,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import FileDisplay from "./FileDisplay";
 import DirectoryListing from "./DirectoryListing";
-import { CookieBanner } from "./CookieBanner";
 import { replaceEmojis } from "../util/emoji_util";
 import { ErrorMessage } from "./ErrorMessage";
 
@@ -81,7 +80,7 @@ function Registry(): React.ReactElement {
     path,
   ]);
   const documentationURL = useMemo(() => {
-    const doc = `https://doc.deno.land/https/deno.land${canonicalPath}`;
+    const doc = `https://doc.deno.land/https://deno.land${canonicalPath}`;
     return denoDocAvailableForURL(canonicalPath) ? doc : null;
   }, [canonicalPath]);
 
@@ -296,7 +295,6 @@ function Registry(): React.ReactElement {
           {" | دینو"}
         </title>
       </Head>
-      <CookieBanner />
       <div className="bg-gray-50 min-h-full">
         <Header
           subtitle={name === "std" ? "کتابخانه استاندارد" : "ماژول‌های متفرقه"}

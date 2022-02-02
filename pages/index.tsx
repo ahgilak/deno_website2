@@ -9,7 +9,6 @@ import versions from "../versions.json";
 import { GetStaticProps, NextPage } from "next";
 import InlineCode from "../components/InlineCode";
 import Header from "../components/Header";
-import { CookieBanner } from "../components/CookieBanner";
 
 interface HomeProps {
   latestStd: string;
@@ -20,7 +19,7 @@ const Home: NextPage<HomeProps> = ({ latestStd }) => {
     `import { serve } from "https://deno.land/std@${latestStd}/http/server.ts";
 
 console.log("http://localhost:8000/");
-serve((req) => new Response("Hello World\\n"), { addr: ":8000" });
+serve((req) => new Response("Hello World\\n"), { port: 8000 });
 `;
 
   return (
@@ -28,7 +27,6 @@ serve((req) => new Response("Hello World\\n"), { addr: ":8000" });
       <Head>
         <title>دینو - محیطی مدرن برای اجرای جاوااسکریپت و تایپ‌اسکریپت</title>
       </Head>
-      <CookieBanner />
       {
         /* <div className="bg-blue-500 p-4 text-white flex justify-center text-center">
         <div className="max-w-screen-xl">
@@ -263,7 +261,7 @@ const InstallSection = () => {
       <p className="py-2">Shell (مک, لینوکس):</p>
       <CodeBlock
         language="bash"
-        code={`curl -fsSL https://deno.land/x/install/install.sh | sh`}
+        code={`curl -fsSL https://deno.land/install.sh | sh`}
       />
     </div>
   );
@@ -283,7 +281,7 @@ const InstallSection = () => {
       <p className="mb-2">PowerShell (ویندوز):</p>
       <CodeBlock
         language="bash"
-        code={`iwr https://deno.land/x/install/install.ps1 -useb | iex`}
+        code={`iwr https://deno.land/install.ps1 -useb | iex`}
       />
     </div>
   );
