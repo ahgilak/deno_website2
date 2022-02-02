@@ -113,6 +113,7 @@ export function RawCodeBlock({
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
+          dir="ltr"
           className={className + " flex overflow-y-auto " +
             (extraClassName ?? "")}
           style={{ ...style }}
